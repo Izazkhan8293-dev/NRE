@@ -1,0 +1,22 @@
+{
+  "name": "new-royal-erp",
+  "version": "1.0.0",
+  "description": "New Royal Electricals & Hardware — ERP System",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=packages/api\" \"npm run dev --workspace=apps/web\"",
+    "dev:api": "npm run dev --workspace=packages/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:desktop": "npm run dev --workspace=apps/desktop",
+    "install:all": "npm install && npm install --workspace=packages/api && npm install --workspace=apps/web && npm install --workspace=apps/desktop && npm install --workspace=apps/mobile",
+    "seed": "npm run seed --workspace=packages/api",
+    "build:web": "npm run build --workspace=apps/web"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
